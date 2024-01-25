@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.10)
 
-project(FreeRTOS_Posix C)
+project(FreeRTOS_app C)
 
 set(CMAKE_C_STANDARD 11)
 
@@ -8,11 +8,14 @@ file(GLOB SOURCE_FILES ${CMAKE_CURRENT_SOURCE_DIR}/kernel/*.c
                        ${CMAKE_CURRENT_SOURCE_DIR}/*.c
                        ${CMAKE_CURRENT_SOURCE_DIR}/kernel/portable/MemMang/heap_4.c
                        ${CMAKE_CURRENT_SOURCE_DIR}/kernel/portable/ThirdParty/GCC/Posix/port.c
-                       ${CMAKE_CURRENT_SOURCE_DIR}/kernel/portable/ThirdParty/GCC/Posix/utils/*.c)
+                       ${CMAKE_CURRENT_SOURCE_DIR}/kernel/portable/ThirdParty/GCC/Posix/utils/*.c
+                       ${CMAKE_CURRENT_SOURCE_DIR}/project/src/*.c
+                       )
 
 include_directories(
         ${CMAKE_CURRENT_SOURCE_DIR}/kernel/include
         ${CMAKE_CURRENT_SOURCE_DIR}/kernel/portable/ThirdParty/GCC/Posix/utils
+        ${CMAKE_CURRENT_SOURCE_DIR}/project/include
         ${CMAKE_CURRENT_SOURCE_DIR}/
 )
 
